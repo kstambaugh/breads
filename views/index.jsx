@@ -5,14 +5,14 @@ function Index({ breads }) {
     return (
         <Default>
             <h2>Index Page</h2>
-            {/* <p>I have {breads[1].name} bread!</p> */}
-            {/* <ul>
+            {/* <p>I have {breads[0].name} bread!</p> */}
+            <ul>
                 {
                     breads.map((bread, index) => {
                         return <li></li>
                     })
                 }
-            </ul> */}
+            </ul>
         </Default>
     )
 }
