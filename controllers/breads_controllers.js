@@ -15,11 +15,14 @@ breads.get('/', (req, res) => {
 
 //show
 breads.get('/:arrayIndex', (req, res) => {
-    console.log(Bread)
-    console.log('this is an id', req.params)
-    res.render('Show', {
-        bread: Bread[req.params.arrayIndex]
-    })
+    if (Bread[req.params.arrayIndex]) {
+        console.log('this is an id', req.params)
+        res.render('Show', {
+            bread: Bread[req.params.arrayIndex]
+        })
+    } else {
+        res.render('404')
+    }
 })
 
 module.exports = breads
