@@ -6,6 +6,7 @@ const PORT = process.env.PORT
 const app = express()
 
 // MIDDLEWARE
+app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
@@ -15,6 +16,8 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.get('/', (req, res) => {
     res.send('Welcome to an Awesome App about Breads!')
 })
+
+
 //breads
 const breadsController = require('./controllers/breads_controllers.js')
 app.use('/breads', breadsController)
